@@ -3,7 +3,7 @@ pandas
 pathlib
 openai
 dotenv
-docx
+#docx
 asyncio
 plotly
 requests

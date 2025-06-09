@@ -9,8 +9,8 @@ import asyncio
 #from agents import Agent, Runner, WebSearchTool, function_tool, ItemHelpers
 from openai import OpenAI
 from dotenv import load_dotenv
-from docx import Document
-from docx.shared import Inches
+#from docx import Document
+#from docx.shared import Inches
 import xlrd
 
 # Set the title and favicon that appear in the Browser's tab bar.
