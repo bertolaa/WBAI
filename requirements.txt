@@ -1,6 +1,7 @@
 streamlit
 pandas
 pathlib
+os
 openai
 dotenv
 #docx
