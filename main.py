@@ -6,7 +6,7 @@ import pandas as pd
 from pathlib import Path
 import asyncio
 import os
-from agents import Agent, Runner, WebSearchTool, function_tool, ItemHelpers
+#from agents import Agent, Runner, WebSearchTool, function_tool, ItemHelpers
 from openai import OpenAI
 from dotenv import load_dotenv
 from docx import Document
@@ -48,7 +48,7 @@ if ((st.button ("Produce Country profile")) & (selected_country != None)):
     with st.spinner("Generation in progress... Country: "+ selected_country):
         response = client.responses.create (
         model="gpt-4.1-mini",
-        input = "You are a senior local politician who has to prepare a 3 years plan about health services to be provided in a country. The community to focus is " + selected_country + "." + selected_country + """ has a number of laws and regulation related to health promotion and health services. Collect them for your reference. 
+        input = "You are a senior local politician who has to prepare a 3 years plan about health services to be provided in a country. The country to focus is " + selected_country + "." + selected_country + """ has a number of laws and regulation related to health promotion and health services. Collect them for your reference. 
             Your scope is to create a document with a different vision of health. Health is both a foundation and a goal of well-being economies. Health systems are not only economic sectors in their own right—employing millions and generating social value—but also key enablers of human development, social cohesion, and environmental sustainability. 
             The vision will strengthen national capacities to generate, govern, and use health-related data to inform policies that promote equitable, resilient, and prosperous societies. The vision works on 4 well-being capitals: Human well-being, Social well-being, Planetary well-being, Economic well-being. 
             Potential actions and activities carried by stakeholders to promote well-being are also being mentiones in the WHO 'Well-being economy: a policy toolkit' (2024).
