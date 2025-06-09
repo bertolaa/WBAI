@@ -1,11 +1,9 @@
 streamlit
 pandas
 pathlib
-agents
 openai
 dotenv
 docx
-os
 asyncio
 plotly
 requests
