@@ -1,13 +1,14 @@
+os
 streamlit
 pandas
 pathlib
-os
 openai
 dotenv
-#docx
+docx
 asyncio
 plotly
 requests
 eurostat
 xlrd
 openpyxl
+agents
