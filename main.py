@@ -6,7 +6,7 @@ import pandas as pd
 from pathlib import Path
 import asyncio
 #import os
-from agents import Agent, Runner, WebSearchTool, function_tool, ItemHelpers
+#from agents import Agent, Runner, WebSearchTool, function_tool, ItemHelpers
 from openai import OpenAI
 from dotenv import load_dotenv
 from docx import Document
@@ -41,6 +41,9 @@ selected_country= st.selectbox(
      ''':green[*For which country would you like to produce a report?**]''', countries_df['Countries.full_name'], index=None)
 
 if ((st.button ("Produce Country profile")) & (selected_country != None)):
+
+
+
 
 
 #-----------------------------------------------------------------
