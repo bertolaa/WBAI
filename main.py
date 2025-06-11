@@ -5,7 +5,7 @@ import streamlit as st
 import pandas as pd
 from pathlib import Path
 import asyncio
-import os
+#import os
 from agents import Agent, Runner, WebSearchTool, function_tool, ItemHelpers
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -24,7 +24,8 @@ st.header(":green[Well-being economy analysis tool]")
 # Step 1: Get OpenAI API key
 #-----------------------------------------------------------------
 load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+#OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 client = OpenAI(api_key= OPENAI_API_KEY)
 
 #-----------------------------------------------------------------
