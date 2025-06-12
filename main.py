@@ -663,7 +663,7 @@ elif (mod == "Country Profile"):
         with st.spinner("Data analysis in progress... Country: "+ selected_country):
             
             #first prompt related to data analysis
-            input ="You are an experienced data scientist. Use the following data for country " + selected_country + " and provide comment on trends and relations between indicators collected. Elaborate a concise report highlighting differences for males and females, for age groups, for groups with different education or income, for groups living in urban areas compared to rural, and trends over time" + prompt0 + " Do not add introductions or conclusions. No AI disclaimers or pleasantries. For your report use bullet list, break lines, style text font Arial 14 for titles and text font Arial 12 for normal text."
+            input ="You are an experienced data scientist. Use the following data for country " + selected_country + " and provide comment on trends and relations between indicators collected. Elaborate a concise report highlighting differences for males and females, for age groups, for groups with different education or income, for groups living in urban areas compared to rural, and trends over time" + prompt0 + " Do not add introductions or conclusions. No AI disclaimers or pleasantries. Use bullet points, titles and text."
             
             messages.append({"role": "user", "content": input})
             response = client.chat.completions.create(
@@ -689,7 +689,7 @@ elif (mod == "Country Profile"):
             Elaborate on the data given previously for """ + selected_country + """ around the 4 well-being capitals and indicators (where possible disaggregated by sex, gender, and age), if it's needed collect additional data and describe what are the key points to be considered for planning goods and services to promote the 4 well-being capitals.
             Provide a 5 page long report with actions for each well-being capital with content reference and data sources. Reason your points in relation to health laws and policies and data provided by highlighting data and relations among indicators. 
             Highlight data improvements that could be depending by the implementation of a law, expand key actions for each well-being capital by reasoning the choice with your comments and recommendations. At the end of your report make a summary table of recommendations, with well-being capitals as rows and key actions, legal/policy basis, expected impact as columns. 
-            Do not add introductions or conclusions. No AI disclaimers or pleasantries. For your report use bullet list, break lines, style text font Arial 14 for titles and text font Arial 12 for normal text."""
+            Do not add introductions or conclusions. No AI disclaimers or pleasantries. Use bullet points, titles and text."""
             
             messages.append({"role": "assistant", "content": assistant_reply})
             messages.append({"role": "user", "content": input2})
