@@ -663,7 +663,7 @@ elif (mod == "Country Profile"):
         with st.spinner("Data analysis in progress... Country: "+ selected_country):
             
             #first prompt related to data analysis
-            input ="You are an experienced data scientist. Use the following data for country " + selected_country + " and provide comment on trends and relations between indicators collected. Elaborate a concise report highlighting differences for males and females and trends over time" + prompt0 + " Do not add introductions or conclusions. No AI disclaimers or pleasantries. For your comments use bullet list, break lines, font Arial 14 for titles, and font Arial 12 for normal text."
+            input ="You are an experienced data scientist. Use the following data for country " + selected_country + " and provide comment on trends and relations between indicators collected. Elaborate a concise report highlighting differences for males and females, for age groups, for groups with different education or income, for groups living in urban areas compared to rural, and trends over time" + prompt0 + " Do not add introductions or conclusions. No AI disclaimers or pleasantries. For your comments use bullet list, break lines, font Arial 14 for titles, and font Arial 12 for normal text."
             
             messages.append({"role": "user", "content": input})
             response = client.chat.completions.create(
