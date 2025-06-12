@@ -22,9 +22,14 @@ client.api_key = OPENAI_API_KEY
 
 # Set the title and favicon that appear in the Browser's tab bar.
 st.set_page_config(
-    page_title='Well-being economy analysis tool',
+    page_title='Health in well-being economy analysis tool',
     layout="wide",
 )
+
+# Display image as heading
+st.image(Path(__file__).parent/'img/logo.gif')
+
+
 # Declare some useful functions.
 doc = Document()
 
@@ -304,7 +309,7 @@ def draw_chart_hesr (df, measure, container, sexdim, dim):
 # Set the title that appears at the top of the page.
 ##############################################################################################################
 
-st.header(":green[Well-being economy analysis tool]")
+st.header(":green[Health in well-being economy analysis tool]")
 #st.write("_... to visualize well-being data from public databases_")
 
 # Populating variables on "indicators.xls" and "countries_WHO_Euro.csv" files
@@ -321,9 +326,9 @@ countries_df = pd.DataFrame(countries_WHOEURO)
 countries_df['Country Code'] = countries_df['Countries.code']
 
 mod = "Country Profile" 
-options = ["Explore countries", "Country Profile"]    
+options = ["Explore Countries", "Country Profile"]    
 
-mod = st.pills ("Select type of visualization", options) 
+#mod = st.pills ("Select type of visualization", options) 
 
 #Explore countries 
 if ( mod == "Explore countries" ):
@@ -534,7 +539,7 @@ elif (mod == "Country Profile"):
    
     #country selection
     selected_country= c1.selectbox(
-     ''':green[*For which country would you like to produce a report?*]''', countries_df['Countries.short_name'], index=None)
+     ''':green[*Which WHO/Europe country would you like to select?*]''', countries_df['Countries.short_name'], index=None)
 
     filtered_countries = countries_df[countries_df['Countries.short_name'] == selected_country]       
     iso_acronyms = filtered_countries['Country Code'].to_list()
@@ -546,7 +551,7 @@ elif (mod == "Country Profile"):
         #start populating document to be downloaded
         doc.add_heading('Health in well-being economy analysis tool', 0)
         
-        a = "Indicators to be elaborated: " + str(len(indi_df)) + " - Country: " + selected_country 
+        a = "Selected indicators to be elaborated: " + str(len(indi_df)) + " - Country: " + selected_country 
         c1.subheader (a)
         doc.add_paragraph(a)        
         
@@ -670,6 +675,7 @@ elif (mod == "Country Profile"):
             assistant_reply = response.choices[0].message.content
             c1.write ("****** AI data report:")
             c1.write (assistant_reply)
+            c1.write ("****************************************************************")
             doc.add_paragraph("****** AI data report:" + assistant_reply)
             
             # Second prompt for elaboration
